@@ -447,6 +447,8 @@ time
 > 1h1. To-do list shows an error message for conflicts <br>
 > Use case ends
 
+<br>
+
 #### Use case #2: add tag
  
 **MSS**
@@ -471,7 +473,7 @@ Use case ends
 > 1c1. To-do list processes Update tags of a task (UC #5)
 > Use case ends
  
-
+<br>
 
 #### Use case #3: customize commands
  
@@ -490,9 +492,9 @@ Use case ends
 1b. The input command word contains invalid input
 > 1b1. To-do list prompts an error message for invalid input <br>
 > Use case ends
- 
 
-
+<br>
+
 #### Use case #4: Delete task or tag
  
 **MSS**
@@ -512,9 +514,9 @@ Use case ends
 > 1b2. User confirms his actions
 > 1b3. To-do list delete the selected tasks and prompts a message on UI to show success <br>
 > Use case ends
- 
 
-
+<br>
+
 #### Use case #5: Update a task
  
 **MSS**
@@ -539,9 +541,9 @@ Use case ends
 > 3c2. User confirms yes or no
 > 3c3. To-do list add the tag (UC #2) and update the task, show new information on UI <br>
 > Use case ends
- 
 
-
+<br>
+
 #### Use case #6: Update a tag name
  
 **MSS**
@@ -567,8 +569,8 @@ Use case ends
 > 1c3. To-do list merges the two tags (UC #7)
 > Use case ends
 
+<br>
 
-
 #### Use case #7: Merge two tags
  
 **MSS**
@@ -585,11 +587,10 @@ Use case ends
 
 2a. Some of the tasks are having both tags at the same time
 > 2a1. To-do list deleted tag A of such tasks and leave only tag B
-> Use case ends
+> Use case ends <br>
 
- 
+<br>
 
-
 #### Use case #8: List tasks
  
 **MSS**
@@ -602,14 +603,15 @@ Use case ends
  
 1a. The given description is not following the format
  
->1a1. To-do list shows an error message for invalid input <br>
+> 1a1. To-do list shows an error message for invalid input <br>
 > Use case ends
  
 1b. To-do list does not found any tasks
->1b1. To-do list returns ‘No task has been found.’ <br>
+> 1b1. To-do list returns ‘No task has been found.’ <br>
+> Use case ends <br>
 
+<br>
 
-
 #### Use case #9: List tags
  
 **MSS**
@@ -622,15 +624,15 @@ Use case ends
  
 1a. The given description is not following the format
  
->1a1. To-do list shows an error message for invalid input <br>
+> 1a1. To-do list shows an error message for invalid input <br>
 > Use case ends
  
 1b. To-do list does not found any tags
 >1b1. To-do list returns ‘No tags has been found.’ <br>
+> Use case ends <br>
 
+<br>
 
-
- 
 #### Use case #10: List reminders
  
 **MSS**
@@ -647,8 +649,10 @@ Use case ends
 > Use case ends
  
 1b. To-do list does not found any tags
->1b1. To-do list returns ‘No reminder has been found.’ <br>
+> 1b1. To-do list returns ‘No reminder has been found.’ <br>
+> Use case ends <br>
 
+<br>
 
 #### Use case #11: Select a task or a tag        	
  
@@ -672,11 +676,11 @@ Use case ends
  
 1b. User input number out of range.
  
->1b1. To-do list shows an error message for invalid number. <br>
+> 1b1. To-do list shows an error message for invalid number. <br>
+> Use case ends <br>
 
- 
+<br>
 
-
 #### Use case #12: Exit                  	
  
 **MSS**
@@ -687,13 +691,12 @@ Use case ends
 Use case ends
 
 **Extension**
-1a. The user input exit in the middle of an unfinished function
-> 1a1. The user 
- 
+1a. The user input exit in the middle of an unfinished action
+> 1a1. To-do List show error message that the user could not exit until he finishes the action <br>
+> Use case ends <br>
 
- 
+<br>
 
-
 #### Use case #13: Storage             	
  
 **MSS**
@@ -713,11 +716,10 @@ Use case ends
 1a. User input is invalid
  
 > 1a1. To-do list shows an error message for invalid input. <br>
-> Use case ends
+> Use case ends <br>
 
- 
+<br>
 
-
 #### Use case #14: Set reminder      	
  
 **MSS**
@@ -731,12 +733,10 @@ Use case ends
  
 1a. User input is invalid
 > 1a1. To-do list shows an error message for invalid input. <br>
-> Use case ends
- 
+> Use case ends <br>
 
- 
+<br>
 
-
 #### Use case #15: Tag                  	
  
 **MSS**
@@ -753,13 +753,11 @@ Use case ends
 > 1a1. To-do list shows an error message for invalid input. <br>
  
 1b. The tag input does not exist
-> 1b1. To-do list create the new tag (UC#2)
-> Use case ends
- 
- 
+> 1b1. To-do list create the new tag (UC#2) <br>
+> Use case ends <br>
 
+<br>
 
-
 #### Use case #16: Help
 
 **MSS**
@@ -774,7 +772,8 @@ Use case ends
 > 1a1. To-do list provide the information according to the criteria <br>
 > Use case ends
 
-
+<br>
+
 #### Use case #17: Find
 
 **MSS**
@@ -793,8 +792,8 @@ Use case ends
 > 1b1. To-do list prompts error message for invalid input. <br>
 > Use case ends
 
+<br>
 
-
 #### Use case #18: Undo an operation	
  
 **MSS**
