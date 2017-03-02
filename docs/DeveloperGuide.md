@@ -1,4 +1,4 @@
-# AddressBook Level 4 - Developer Guide
+# To-do List - Developer Guide
 
 By : `Team SE-EDU`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `Jun 2016`  &nbsp;&nbsp;&nbsp;&nbsp; Licence: `MIT`
 
@@ -344,43 +344,474 @@ b. Require developers to download those libraries manually (this creates extra w
 Priorities: High (must have) - `* * *`, Medium (nice to have)  - `* *`,  Low (unlikely to have) - `*`
 
 
-Priority | As a ... | I want to ... | So that I can...
+Priority | As a ... | I want to ... | So that...
 -------- | :-------- | :--------- | :-----------
-`* * *` | new user | see usage instructions | refer to instructions when I forget how to use the App
-`* * *` | user | add a new person |
-`* * *` | user | delete a person | remove entries that I no longer need
-`* * *` | user | find a person by name | locate details of persons without having to go through the entire list
-`* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
-`*` | user with many persons in the address book | sort persons by name | locate a person easily
+`* * *` | new user | see usage instructions | I can refer to instructions when I forget how to use the App
+`* * *` | user | add a task by specifying a task description and the deadline | I can record tasks that need to be done by a specific day
+`* * *` | user |add an event/task with description, time period and date	| I can record events that need to be done in a specific period 
+`* * *` | user |add an event/task with description that has variation of formats	| I am not limited to one and only one format - I can have some flexibility
+`* * *` | user |add a recurring task with description, time, frequency	|I can record tasks that need to be done on a specific day
+`* * *` | user |add a tag/multiple tag to an existing event/task	| I do not have to always add the tag when I add the task
+`* * *` | user |delete unwanted tag	| I can remove the tags when I no longer need them
+`* * *` | user |delete task | I can remove the tasks when I have completed them
+`* * *` | user |to have confirmation on deleting uncompleted task	| I will not accidentally delete a task
+`* * *` | user |edit the description/deadline of a certain task |	I can update the task once the conditions changes/deadline extended
+`* * *` | user |edit the tag of a certain task	| I can update the task once I feel another tag is more suitable
+`* * *` | user |edit the tag name	| I can update name of a tag for all tasks under it once for all
+`* * *` | user |find the tasks whose description contains certain key words	| I can easily locate the task if I cannot remember fully the task name
+`* * *` | user |find the tasks by giving multiple criteria	| I can have the choice of input more information to search for the task I have in mind
+`* * *` | user |find the tag by typing the keywords	| I can locate the tags if I cannot remember fully the tag name
+`* * *` | user |find the most urgent task/the task with the highest urgency level	| I can know in a blink what I am supposed to do now
+`* * *` | user |have an exhaustive user guide on all commands	| I will know all availabe commands that I have
+`* * *` | user |have user guide on specific area of commands |	I will know what are the available commands for that area
+`* * *` | user | obtain a list of all task |	I can know all the tasks I have at hand
+`* * *` | user |list tasks whose deadlines are within a certain time period	| I can know all the tasks that have deadlines within that time period
+`* * *` | user |list all tasks whose deadline is on one given day	| I can know by certain time point what I should have completed
+`* * *` | user |have a list of completed task	| I can check what I have done
+`* * *` | user |list all tasks by under a certain tag	| I can know that tasks I have within one category
+`* * *` | user |list the ongoing tasks for a given day	| I can know what I am occupied with on that day
+`* * *` | user |list all tasks under multiple tags	| I can know the tasks under more than just one tag
+`* * *` | user |select one/multiple tasks/tags	| I can carry out further actions on the selected tasks
+`* * *` | user |save the data into a folder I have specified	| I know where to find the data I have entered
+`* * *` | user |undo the most recent operation	| in case I made a mistake I can reverse
+`* * *` | user |exit the software | I can move to other windows when I finish using To-do list
+`* *` | user |group/filter tasks according to categories such as work/family/etc |	I will not be distracted by irrelevant tasks at specific times
+`* *` | user | edit the subtasks of a task	| I can update the subtasks if there is any changes
+`* *` | user |have suggestions when I typed invalidly |	I will know how to correct my mistakes
+`* *` | New user | have reminders of format when I started a command word	| I will know the correct format of the input
+`* *` | user | assign importance levels to each task with colour coding	| I can easily spot the more important tasks and prioritize them
+`* *` | user |set notifications before the due time for certain tasks |	I will be reminded of the task in a timely manner
+`* *` | user |split tasks into subtasks with a progress bar | I can keep track of my progress in individual tasks
+`* *` | user |copy and paste the task to some other day |	I don't need to type extra
+`* * ` | Advanced user | use shorter versions of a command/customize my commands	 | I can type a command faster
+`*` | user|have a guided tour of the software	| I will know what are the available features of the software
+`*` | user|customize the timing for reminder	| I will not be bombasted with too many reminders
+`*` | user| share task/tasks with others |	I can designate my tasks to others
 
 {More to be added}
-
 ## Appendix B : Use Cases
-
+     	        	        	        	
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
-
-#### Use case: Delete person
-
+ 
+#### Use case #1: add task
+ 
 **MSS**
+ 
+1. User requests to add a task
+2. To-do list adds the new task and shows the details of the new task on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The new task created contains some optional parameters including description, start time, end time, tag, urgency level and so on.
+ 
+>1a1. To-do list adds in the input parameters and shows the details on UI <br>
+> Use case ends
+ 
+1b. The input task name contains invalid input
+ 
+> 1b1. To-do list shows an error message for invalid name input <br>
+> Use case ends
+ 
+1c. The input start time is before the end
+time
+ 
+>1c1. To-do list shows an error message for invalid input <br>
+> Use case ends
 
-1. User requests to list persons
-2. AddressBook shows a list of persons
-3. User requests to delete a specific person in the list
-4. AddressBook deletes the person <br>
-Use case ends.
+1d. The input start time or end time is in an invalid format
+ 
+>1d1. To-do list shows an error message for invalid input <br>
+> Use case ends
+ 
+1e. The input tag name does not exist and user would like to create a new tag
+ 
+> 1e1. To-do list prompts a message to query if the user would like to create the tag
+> 1e2. User choose yes
+> 1e3. To-do list creates the new tag and shows information for the new task on UI <br>
+> Use case ends
+ 
+1f. The input tag name does not exist and it is actually a typo error
+ 
+> 1f1. To-do list prompts a message to query if the user would like to create the tag
+> 1f2. User choose no <br>
+> Use case resumes at Step 1
+ 
+1g. The input urgency level is not valid e.g. the user input a float while an integer is expected
+ 
+> 1d1. To-do list shows an error message for invalid input <br>
+> Use case ends
+ 
+1h. There already exists a task with exact same value of all parameters
+ 
+> 1h1. To-do list shows an error message for conflicts <br>
+> Use case ends
+
+<br>
+
+#### Use case #2: add tag
+ 
+**MSS**
+ 
+1. User requests to add a tag
+2. To-do list adds the new tag and shows the details of the new task on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The input tag name already exists
+ 
+> 1a1. To-do list prompts an error message that the tag name already exists <br>
+> Use case ends
+ 
+1b. The input new tag name does not have a proper format
+ 
+> 1b1. To-do list prompts an error message for invalid input <br>
+> Use case ends
+ 
+1c. User would like to add new task immediately to the task
+> 1c1. To-do list processes Update tags of a task (UC #5) <br>
+> Use case ends
+ 
+<br>
+
+#### Use case #3: customize commands
+ 
+**MSS**
+ 
+1. User requests to customize some command with their customized shortcut
+2. To-do list updates the command input and show message on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The input command word already exists
+> 1a1. To-do list prompts an error message for invalid input <br>
+> Use case ends
+ 
+1b. The input command word contains invalid input
+> 1b1. To-do list prompts an error message for invalid input <br>
+> Use case ends
+
+<br>
+
+#### Use case #4: Delete task or tag
+ 
+**MSS**
+ 
+1. User requests to delete a task or tag
+2. To-do list delete the task and prompts message on UI to show success  
+Use case ends
+ 
+**Extensions**
+ 
+1a. The task/tag selected does not exist
+> 1a1. To-do list shows an error message for target not found <br>
+> Use case ends
+ 
+1b. The user requests to delete all tasks under certain criteria, e.g. under the same tag or contains certain keywords
+> 1b1. To-do list lists out the tasks that fulfill the criteria (UC #) and prompts a confirmation message <br>
+> 1b2. User confirms his actions <br>
+> 1b3. To-do list delete the selected tasks and prompts a message on UI to show success <br>
+> Use case ends
+
+<br>
+
+#### Use case #5: Update a task
+ 
+**MSS**
+ 
+1. User requests to update a task
+2. To-do list select the task and show the current information
+3. User select the parameters to be updated and input new value
+4. To-do list updates the value, and show updated information on UI
+Use case ends
+ 
+**Extensions**
+3a. The task is not found
+> 1a1. To-do list prompts an error message for target not found <br>
+> Use case ends
+ 
+3b. The input new values contain invalid input
+> 3b1. To-do list prompts an error message for invalid input <br>
+> Use case ends
+ 
+3c. The use input a tag that does now exist
+> 3c1. To-do list prompts a message to query if the user needs to create a new list <br>
+> 3c2. User confirms yes or no <br>
+> 3c3. To-do list add the tag (UC #2) and update the task, show new information on UI <br>
+> Use case ends
+
+<br>
+
+#### Use case #6: Update a tag name
+ 
+**MSS**
+ 
+1. User requests to select a tag update its name
+2. To-do list update the name of the tag and show the updated information on UI
+Use case ends
+ 
+**Extensions**
+1a. The selected tag does not exist
+> 1a1. To-do list shows error message on target not found. <br>
+> Use case ends
+
+1b. The input new tag name is invalid
+
+> 1b1. To-do list shows error message on invalid input <br>
+> Use case ends
+ 
+1c. The input new tag name already exist
+
+> 1c1. To-do list prompts message to query the user if he would like to merge two tags <br>
+> 1c2. User confirms yes <br>
+> 1c3. To-do list merges the two tags (UC #7)
+> Use case ends
+
+<br>
+
+#### Use case #7: Merge two tags
+ 
+**MSS**
+ 
+1. User requests to select tag A to be merged to tag B
+2. To-do list merges the two tags by changing tags of all tasks under A to B
+Use case ends
 
 **Extensions**
 
-2a. The list is empty
-
+1a. Either or both of the selected tags are not found
+> 1a1. To-do list shows error message for target not found <br>
 > Use case ends
 
-3a. The given index is invalid
+2a. Some of the tasks are having both tags at the same time
+> 2a1. To-do list deleted tag A of such tasks and leave only tag B <br>
+> Use case ends <br>
 
-> 3a1. AddressBook shows an error message <br>
-  Use case resumes at step 2
+<br>
 
-{More to be added}
+#### Use case #8: List tasks
+ 
+**MSS**
+ 
+1. User requests to list tasks by certain parameters or criteria, for example by urgency levels, by end time, by tag, etc.
+2. To-do list shows all tasks that the user requests on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The given description is not following the format
+ 
+> 1a1. To-do list shows an error message for invalid input <br>
+> Use case ends
+ 
+1b. To-do list does not found any tasks
+> 1b1. To-do list returns ‘No task has been found.’ <br>
+> Use case ends <br>
+
+<br>
+
+#### Use case #9: List tags
+ 
+**MSS**
+ 
+1. User requests to list tags
+2. To-do list shows all tags on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The given description is not following the format
+ 
+> 1a1. To-do list shows an error message for invalid input <br>
+> Use case ends
+ 
+1b. To-do list does not found any tags
+>1b1. To-do list returns ‘No tags has been found.’ <br>
+> Use case ends
+
+<br>
+
+#### Use case #10: List reminders
+ 
+**MSS**
+ 
+1. User requests to list reminders
+2. To-do list shows all reminders on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. The given description is not following the format
+ 
+>1a1. To-do list shows an error message for invalid input <br>
+> Use case ends
+ 
+1b. To-do list does not found any tags
+> 1b1. To-do list returns ‘No reminder has been found.’ <br>
+> Use case ends
+
+<br>
+
+#### Use case #11: Select a task or a tag        	
+ 
+**MSS**
+ 
+1. User requests to select an object from a list of tasks by its given number <br>
+or to select consecutive objects from a list <br>
+or to select multiple objects form a list <br>
+or to select all objects form a list <br>
+2. To-do list selects and displays the task on UI.
+Use case ends
+ 
+**Extensions**
+ 
+1a. User input is invalid
+ 
+>1a1. To-do list shows an error message for invalid input. <br>
+> Use case ends
+ 
+1b. User input number out of range.
+ 
+> 1b1. To-do list shows an error message for invalid number. <br>
+> Use case ends <br>
+
+<br>
+
+#### Use case #12: Exit                  	
+ 
+**MSS**
+ 
+1. User requests to exit To-do list
+2. To-do list exits.
+Use case ends
+
+**Extension**
+1a. The user input exit in the middle of an unfinished action
+> 1a1. To-do List show error message that the user could not exit until he finishes the action <br>
+> Use case ends <br>
+
+<br>
+
+#### Use case #13: Storage             	
+ 
+**MSS**
+ 
+1. User requests to change the path of the storage file to an existing file and export all data into that file <br>
+or change the path of the storage file to a new file and export all data into that file <br>
+or  clear all existing data <br>
+2. To-do list asks for confirmation.
+3. User inputs yes or no.
+4. To-do list do the commands accordingly and displays ‘operation done’ on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. User input is invalid
+> 1a1. To-do list shows an error message for invalid input. <br>
+> Use case ends
+
+<br>
+
+#### Use case #14: Set reminder      	
+ 
+**MSS**
+ 
+1. User requests to set a reminder including its description, frequency and end time (for a specific task)
+2. To-do list set the reminder and displays ‘operation done’ on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. User input is invalid
+> 1a1. To-do list shows an error message for invalid input. <br>
+> Use case ends
+
+<br>
+
+#### Use case #15: Tag                  	
+ 
+**MSS**
+ 
+1. User requests to add a tag to the selected tasks
+2. To-do created the tag or added the tag and displays ‘operation done’ on UI
+Use case ends
+ 
+**Extensions**
+ 
+1a. User input is invalid
+ 
+> 1a1. To-do list shows an error message for invalid input. <br>
+ 
+1b. The tag input does not exist
+> 1b1. To-do list create the new tag (UC#2) <br>
+> Use case ends
+
+<br>
+
+#### Use case #16: Help
+
+**MSS**
+
+1. User requests help message
+2. To-do list prompts help message on the UI 
+Use case ends
+
+**Extensions**
+
+1a. User requests help message in a specific field or contains certain keywords
+> 1a1. To-do list provide the information according to the criteria <br>
+> Use case ends
+
+<br>
+
+#### Use case #17: Find
+
+**MSS**
+
+1. User requests to look for tasks or tags with a certain criteria
+2. To-do list provides a list of tasks or tags that fulfil the criteria (UC #8)
+3. User select one of the tasks or tags (UC #9)
+Use case ends
+
+**Extension**
+1a. The input criteria does not match any tasks or tags
+> 1a1. To-do list prompts error message for target not found. <br>
+> Use case ends
+
+1b. The input criteria does not follow the format
+> 1b1. To-do list prompts error message for invalid input. <br>
+> Use case ends
+
+<br>
+
+#### Use case #18: Undo an operation	
+ 
+**MSS**
+ 
+1. User requests to undo the last operations. Only a maximum of three consecutive undo requests is allowed.
+2. To-do list undoes the last operation and displays ‘operation done’ on UI.
+ 
+Use case ends
+ 
+**Extensions**
+ 
+1a. To-do list finds no previous operation. There could be result from too many undo requests or first time using the software.
+ 
+>1a1. To-do list shows ‘no previous operation found’<br>
+> Use case ends
+ 
+1b. Last operation is invalid
+ 
+>1b1. To-do list undoes last valid operation. <br>
+> Use case ends
+ 
+ 
+1c. Last operation cannot be undo (e.g. clear all data)
+>1c1. To-do list shows an error message for invalid operation <br>
+> Use case ends
+
 
 ## Appendix C : Non Functional Requirements
 
