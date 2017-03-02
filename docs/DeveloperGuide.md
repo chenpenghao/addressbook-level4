@@ -470,7 +470,7 @@ Use case ends
 > Use case ends
  
 1c. User would like to add new task immediately to the task
-> 1c1. To-do list processes Update tags of a task (UC #5)
+> 1c1. To-do list processes Update tags of a task (UC #5) <br>
 > Use case ends
  
 <br>
@@ -510,8 +510,8 @@ Use case ends
 > Use case ends
  
 1b. The user requests to delete all tasks under certain criteria, e.g. under the same tag or contains certain keywords
-> 1b1. To-do list lists out the tasks that fulfil the criteria (UC #) and prompts a confirmation message
-> 1b2. User confirms his actions
+> 1b1. To-do list lists out the tasks that fulfill the criteria (UC #) and prompts a confirmation message <br>
+> 1b2. User confirms his actions <br>
 > 1b3. To-do list delete the selected tasks and prompts a message on UI to show success <br>
 > Use case ends
 
@@ -537,8 +537,8 @@ Use case ends
 > Use case ends
  
 3c. The use input a tag that does now exist
-> 3c1. To-do list prompts a message to query if the user needs to create a new list
-> 3c2. User confirms yes or no
+> 3c1. To-do list prompts a message to query if the user needs to create a new list <br>
+> 3c2. User confirms yes or no <br>
 > 3c3. To-do list add the tag (UC #2) and update the task, show new information on UI <br>
 > Use case ends
 
@@ -564,8 +564,8 @@ Use case ends
  
 1c. The input new tag name already exist
 
-> 1c1. To-do list prompts message to query the user if he would like to merge two tags
-> 1c2. User confirms yes
+> 1c1. To-do list prompts message to query the user if he would like to merge two tags <br>
+> 1c2. User confirms yes <br>
 > 1c3. To-do list merges the two tags (UC #7)
 > Use case ends
 
@@ -582,11 +582,11 @@ Use case ends
 **Extensions**
 
 1a. Either or both of the selected tags are not found
-> 1a1. To-do list shows error message for target not found
+> 1a1. To-do list shows error message for target not found <br>
 > Use case ends
 
 2a. Some of the tasks are having both tags at the same time
-> 2a1. To-do list deleted tag A of such tasks and leave only tag B
+> 2a1. To-do list deleted tag A of such tasks and leave only tag B <br>
 > Use case ends <br>
 
 <br>
@@ -629,7 +629,7 @@ Use case ends
  
 1b. To-do list does not found any tags
 >1b1. To-do list returns ‘No tags has been found.’ <br>
-> Use case ends <br>
+> Use case ends
 
 <br>
 
@@ -650,7 +650,7 @@ Use case ends
  
 1b. To-do list does not found any tags
 > 1b1. To-do list returns ‘No reminder has been found.’ <br>
-> Use case ends <br>
+> Use case ends
 
 <br>
 
@@ -663,7 +663,6 @@ or to select consecutive objects from a list <br>
 or to select multiple objects form a list <br>
 or to select all objects form a list <br>
 2. To-do list selects and displays the task on UI.
- 
 Use case ends
  
 **Extensions**
@@ -671,7 +670,6 @@ Use case ends
 1a. User input is invalid
  
 >1a1. To-do list shows an error message for invalid input. <br>
- 
 > Use case ends
  
 1b. User input number out of range.
@@ -687,7 +685,6 @@ Use case ends
  
 1. User requests to exit To-do list
 2. To-do list exits.
- 
 Use case ends
 
 **Extension**
@@ -704,19 +701,16 @@ Use case ends
 1. User requests to change the path of the storage file to an existing file and export all data into that file <br>
 or change the path of the storage file to a new file and export all data into that file <br>
 or  clear all existing data <br>
- 
 2. To-do list asks for confirmation.
 3. User inputs yes or no.
 4. To-do list do the commands accordingly and displays ‘operation done’ on UI
- 
 Use case ends
  
 **Extensions**
  
 1a. User input is invalid
- 
 > 1a1. To-do list shows an error message for invalid input. <br>
-> Use case ends <br>
+> Use case ends
 
 <br>
 
@@ -726,14 +720,13 @@ Use case ends
  
 1. User requests to set a reminder including its description, frequency and end time (for a specific task)
 2. To-do list set the reminder and displays ‘operation done’ on UI
- 
 Use case ends
  
 **Extensions**
  
 1a. User input is invalid
 > 1a1. To-do list shows an error message for invalid input. <br>
-> Use case ends <br>
+> Use case ends
 
 <br>
 
@@ -743,7 +736,6 @@ Use case ends
  
 1. User requests to add a tag to the selected tasks
 2. To-do created the tag or added the tag and displays ‘operation done’ on UI
- 
 Use case ends
  
 **Extensions**
@@ -754,7 +746,7 @@ Use case ends
  
 1b. The tag input does not exist
 > 1b1. To-do list create the new tag (UC#2) <br>
-> Use case ends <br>
+> Use case ends
 
 <br>
 
@@ -812,14 +804,12 @@ Use case ends
  
 1b. Last operation is invalid
  
->1b1. To-do list undoes last valid operation.
- 
+>1b1. To-do list undoes last valid operation. <br>
 > Use case ends
  
  
 1c. Last operation cannot be undo (e.g. clear all data)
 >1c1. To-do list shows an error message for invalid operation <br>
- 
 > Use case ends
 
 
