@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addressbook>
-    <persons>
-        <name>Hans Muster</name>
-        <phone isPrivate="false">9482424</phone>
-        <email isPrivate="false">hans@google.com</email>
-        <address isPrivate="false">4th street</address>
-    </persons>
-    <persons>
-        <name>Ruth Mueller</name>
-        <phone isPrivate="false">87249245</phone>
-        <email isPrivate="false">ruth@google.com</email>
-        <address isPrivate="false">81th street</address>
-    </persons>
-    <persons>
-        <name>Heinz Kurz</name>
-        <phone isPrivate="false">95352563</phone>
-        <email isPrivate="false">heinz@yahoo.com</email>
-        <address isPrivate="false">wall street</address>
-    </persons>
-    <persons>
-        <name>Cornelia Meier</name>
-        <phone isPrivate="false">87652533</phone>
-        <email isPrivate="false">cornelia@google.com</email>
-        <address isPrivate="false">10th street</address>
-    </persons>
-    <persons>
-        <name>Werner Meyer</name>
-        <phone isPrivate="false">9482224</phone>
-        <email isPrivate="false">werner@gmail.com</email>
-        <address isPrivate="false">michegan ave</address>
-    </persons>
-    <persons>
-        <name>Lydia Kunz</name>
-        <phone isPrivate="false">9482427</phone>
-        <email isPrivate="false">lydia@gmail.com</email>
-        <address isPrivate="false">little tokyo</address>
-    </persons>
-    <persons>
-        <name>Anna Best</name>
-        <phone isPrivate="false">9482442</phone>
-        <email isPrivate="false">anna@google.com</email>
-        <address isPrivate="false">4th street</address>
-    </persons>
-    <persons>
-        <name>Stefan Meier</name>
-        <phone isPrivate="false">8482424</phone>
-        <email isPrivate="false">stefan@mail.com</email>
-        <address isPrivate="false">little india</address>
-    </persons>
-    <persons>
-        <name>Martin Mueller</name>
-        <phone isPrivate="false">8482131</phone>
-        <email isPrivate="false">hans@google.com</email>
-        <address isPrivate="false">chicago ave</address>
-    </persons>
-</addressbook>
+<todolist>
+    <tasks>
+        <title>Hans Muster</title>
+        <venue isPrivate="false">9482424</venue>
+        <starttime isPrivate="false">hans@google.com</starttime>
+        <endtime isPrivate="false">4th street</endtime>
+    </tasks>
+    <tasks>
+        <title>Ruth Mueller</title>
+        <venue isPrivate="false">87249245</venue>
+        <starttime isPrivate="false">ruth@google.com</starttime>
+        <endtime isPrivate="false">81th street</endtime>
+    </tasks>
+    <tasks>
+        <title>Heinz Kurz</title>
+        <venue isPrivate="false">95352563</venue>
+        <starttime isPrivate="false">heinz@yahoo.com</starttime>
+        <endtime isPrivate="false">wall street</endtime>
+    </tasks>
+    <tasks>
+        <title>Cornelia Meier</title>
+        <venue isPrivate="false">87652533</venue>
+        <starttime isPrivate="false">cornelia@google.com</starttime>
+        <endtime isPrivate="false">10th street</endtime>
+    </tasks>
+    <tasks>
+        <title>Werner Meyer</title>
+        <venue isPrivate="false">9482224</venue>
+        <starttime isPrivate="false">werner@gmail.com</starttime>
+        <endtime isPrivate="false">michegan ave</endtime>
+    </tasks>
+    <tasks>
+        <title>Lydia Kunz</title>
+        <venue isPrivate="false">9482427</venue>
+        <starttime isPrivate="false">lydia@gmail.com</starttime>
+        <endtime isPrivate="false">little tokyo</endtime>
+    </tasks>
+    <tasks>
+        <title>Anna Best</title>
+        <venue isPrivate="false">9482442</venue>
+        <starttime isPrivate="false">anna@google.com</starttime>
+        <endtime isPrivate="false">4th street</endtime>
+    </tasks>
+    <tasks>
+        <title>Stefan Meier</title>
+        <venue isPrivate="false">8482424</venue>
+        <starttime isPrivate="false">stefan@mail.com</starttime>
+        <endtime isPrivate="false">little india</endtime>
+    </tasks>
+    <tasks>
+        <title>Martin Mueller</title>
+        <venue isPrivate="false">8482131</venue>
+        <starttime isPrivate="false">hans@google.com</starttime>
+        <endtime isPrivate="false">chicago ave</endtime>
+    </tasks>
+</todolist>
