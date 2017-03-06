@@ -39,7 +39,7 @@ import seedu.address.model.ToDoList;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.ReadOnlyToDoList;
-import seedu.address.model.ReadOnlyToDoList;
+import seedu.address.model.task.EndTime;
 import seedu.address.model.task.EndTime;
 import seedu.address.model.task.StartTime;
 import seedu.address.model.task.Title;
@@ -190,9 +190,9 @@ public class LogicManagerTest {
     public void execute_add_invalidArgsFormat() {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE);
         assertCommandFailure("add wrong args wrong args", expectedMessage);
-        assertCommandFailure("add Valid Title 12345 e/valid@startTime.butNoVenuePrefix a/valid,address", expectedMessage);
-        assertCommandFailure("add Valid Title p/12345 valid@startTime.butNoPrefix a/valid, address", expectedMessage);
-        assertCommandFailure("add Valid Title p/12345 e/valid@startTime.butNoAddressPrefix valid, address", expectedMessage);
+        assertCommandFailure("add Valid Title 12345 e/valid@email.butNoVenuePrefix a/valid,address", expectedMessage);
+        assertCommandFailure("add Valid Title p/12345 valid@email.butNoPrefix a/valid, address", expectedMessage);
+        assertCommandFailure("add Valid Title p/12345 e/valid@email.butNoEndTimePrefix valid, address", expectedMessage);
     }
 
     @Test
@@ -311,7 +311,7 @@ public class LogicManagerTest {
         helper.addToModel(model, threeTasks);
 
         assertCommandSuccess("select 2",
-                String.format(SelectCommand.MESSAGE_SELECT_PERSON_SUCCESS, 2),
+                String.format(SelectCommand.MESSAGE_SELECT_TASK_SUCCESS, 2),
                 expectedAB,
                 expectedAB.getTaskList());
         assertEquals(1, targetedJumpIndex);
@@ -416,14 +416,14 @@ public class LogicManagerTest {
     class TestDataHelper {
 
         Task adam() throws Exception {
-            Title title = new Title("Adam Brown");
+            Title name = new Title("Adam Brown");
             Venue privateVenue = new Venue("111111");
-            StartTime startTime = new StartTime("adam@gmail.com");
-            EndTime privateAddress = new EndTime("111, alpha street");
+            StartTime email = new StartTime("adam@gmail.com");
+            EndTime privateEndTime = new EndTime("111, alpha street");
             Tag tag1 = new Tag("tag1");
             Tag tag2 = new Tag("longertag2");
             UniqueTagList tags = new UniqueTagList(tag1, tag2);
-            return new Task(title, privateVenue, startTime, privateAddress, tags);
+            return new Task(name, privateVenue, email, privateEndTime, tags);
         }
 
         /**
@@ -437,7 +437,7 @@ public class LogicManagerTest {
             return new Task(
                     new Title("Task " + seed),
                     new Venue("" + Math.abs(seed)),
-                    new StartTime(seed + "@startTime"),
+                    new StartTime(seed + "@email"),
                     new EndTime("House of " + seed),
                     new UniqueTagList(new Tag("tag" + Math.abs(seed)), new Tag("tag" + Math.abs(seed + 1)))
             );
@@ -530,13 +530,13 @@ public class LogicManagerTest {
         }
 
         /**
-         * Generates a Task object with given title. Other fields will have some dummy values.
+         * Generates a Task object with given name. Other fields will have some dummy values.
          */
-        Task generateTaskWithTitle(String title) throws Exception {
+        Task generateTaskWithTitle(String name) throws Exception {
             return new Task(
-                    new Title(title),
+                    new Title(name),
                     new Venue("1"),
-                    new StartTime("1@startTime"),
+                    new StartTime("1@email"),
                     new EndTime("House of 1"),
                     new UniqueTagList(new Tag("tag"))
             );
