@@ -15,24 +15,24 @@ public class SampleDataUtil {
     public static Task[] getSampleTasks() {
         try {
             return new Task[] {
-                new Task(new Title("Alex Yeoh"), new Venue("87438807"), new StartTime("alexyeoh@gmail.com"),
-                    new EndTime("Blk 30 Geylang Street 29, #06-40"),
-                    new UniqueTagList("friends")),
-                new Task(new Title("Bernice Yu"), new Venue("99272758"), new StartTime("berniceyu@gmail.com"),
-                    new EndTime("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
-                    new UniqueTagList("colleagues", "friends")),
-                new Task(new Title("Charlotte Oliveiro"), new Venue("93210283"), new StartTime("charlotte@yahoo.com"),
-                    new EndTime("Blk 11 Ang Mo Kio Street 74, #11-04"),
-                    new UniqueTagList("neighbours")),
-                new Task(new Title("David Li"), new Venue("91031282"), new StartTime("lidavid@google.com"),
-                    new EndTime("Blk 436 Serangoon Gardens Street 26, #16-43"),
-                    new UniqueTagList("family")),
-                new Task(new Title("Irfan Ibrahim"), new Venue("92492021"), new StartTime("irfan@outlook.com"),
-                    new EndTime("Blk 47 Tampines Street 20, #17-35"),
-                    new UniqueTagList("classmates")),
-                new Task(new Title("Roy Balakrishnan"), new Venue("92624417"), new StartTime("royb@gmail.com"),
-                    new EndTime("Blk 45 Aljunied Street 85, #11-31"),
-                    new UniqueTagList("colleagues"))
+                new Task(new Title("CS2103 Tutorial"), new Venue("COM1-B110"), new StartTime("March 8, 10.00@gmail.com"),
+                    new EndTime("March 8, 11.00"),
+                    new UniqueTagList("tutorials")),
+                new Task(new Title("CS2103 Lecture"), new Venue("I3-AUD"), new StartTime("March 10, 16.00"),
+                    new EndTime("March 10, 18.00"),
+                    new UniqueTagList("lectures", "lessons")),
+                new Task(new Title("Print ST3131 Notes"), new Venue("Biz Librar"), new StartTime("March 8, 11.00"),
+                    new EndTime("March 8, 12.00"),
+                    new UniqueTagList("chores")),
+                new Task(new Title("FIN3101 Project Meeting"), new Venue("BIZ2 Level 5"), new StartTime("March 8, 14.00"),
+                    new EndTime("March 8, 16.00"),
+                    new UniqueTagList("projects")),
+                new Task(new Title("QF3101 Midterm"), new Venue("LT20"), new StartTime("March 9, 12.00"),
+                    new EndTime("March 9, 13.30"),
+                    new UniqueTagList("exams")),
+                new Task(new Title("GET1018 Midterm"), new Venue("Utown-AUD3"), new StartTime("March 13, 18.00"),
+                    new EndTime("March 13, 20.00"),
+                    new UniqueTagList("exams"))
             };
         } catch (IllegalValueException e) {
             throw new AssertionError("sample data cannot be invalid", e);

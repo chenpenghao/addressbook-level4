@@ -23,7 +23,7 @@ import seedu.address.model.tag.UniqueTagList;
  */
 public class ToDoList implements ReadOnlyToDoList {
 
-    private final UniqueTaskList Tasks;
+    private final UniqueTaskList tasks;
     private final UniqueTagList tags;
 
     /*
@@ -34,14 +34,14 @@ public class ToDoList implements ReadOnlyToDoList {
      *   among constructors.
      */
     {
-        Tasks = new UniqueTaskList();
+        tasks = new UniqueTaskList();
         tags = new UniqueTagList();
     }
 
     public ToDoList() {}
 
     /**
-     * Creates an ToDoList using the Tasks and Tags in the {@code toBeCopied}
+     * Creates an ToDoList using the tasks and tags in the {@code toBeCopied}
      */
     public ToDoList(ReadOnlyToDoList toBeCopied) {
         this();
@@ -50,9 +50,9 @@ public class ToDoList implements ReadOnlyToDoList {
 
 //// list overwrite operations
 
-    public void setTasks(List<? extends ReadOnlyTask> Tasks)
+    public void setTasks(List<? extends ReadOnlyTask> tasks)
             throws UniqueTaskList.DuplicateTaskException {
-        this.Tasks.setTasks(Tasks);
+        this.tasks.setTasks(tasks);
     }
 
     public void setTags(Collection<Tag> tags) throws UniqueTagList.DuplicateTagException {
@@ -64,14 +64,14 @@ public class ToDoList implements ReadOnlyToDoList {
         try {
             setTasks(newData.getTaskList());
         } catch (UniqueTaskList.DuplicateTaskException e) {
-            assert false : "ToDoLists should not have duplicate Tasks";
+            assert false : "ToDoLists should not have duplicate tasks";
         }
         try {
             setTags(newData.getTagList());
         } catch (UniqueTagList.DuplicateTagException e) {
             assert false : "ToDoLists should not have duplicate tags";
         }
-        syncMasterTagListWith(Tasks);
+        syncMasterTagListWith(tasks);
     }
 
 //// Task-level operations
@@ -85,7 +85,7 @@ public class ToDoList implements ReadOnlyToDoList {
      */
     public void addTask(Task p) throws UniqueTaskList.DuplicateTaskException {
         syncMasterTagListWith(p);
-        Tasks.add(p);
+        tasks.add(p);
     }
 
     /**
@@ -106,7 +106,7 @@ public class ToDoList implements ReadOnlyToDoList {
         // TODO: the tags master list will be updated even though the below line fails.
         // This can cause the tags master list to have additional tags that are not tagged to any Task
         // in the Task list.
-        Tasks.updateTask(index, editedTask);
+        tasks.updateTask(index, editedTask);
     }
 
     /**
@@ -130,17 +130,17 @@ public class ToDoList implements ReadOnlyToDoList {
     }
 
     /**
-     * Ensures that every tag in these Tasks:
+     * Ensures that every tag in these tasks:
      *  - exists in the master list {@link #tags}
      *  - points to a Tag object in the master list
      *  @see #syncMasterTagListWith(Task)
      */
-    private void syncMasterTagListWith(UniqueTaskList Tasks) {
-        Tasks.forEach(this::syncMasterTagListWith);
+    private void syncMasterTagListWith(UniqueTaskList tasks) {
+        tasks.forEach(this::syncMasterTagListWith);
     }
 
     public boolean removeTask(ReadOnlyTask key) throws UniqueTaskList.TaskNotFoundException {
-        if (Tasks.remove(key)) {
+        if (tasks.remove(key)) {
             return true;
         } else {
             throw new UniqueTaskList.TaskNotFoundException();
@@ -157,13 +157,13 @@ public class ToDoList implements ReadOnlyToDoList {
 
     @Override
     public String toString() {
-        return Tasks.asObservableList().size() + " Tasks, " + tags.asObservableList().size() +  " tags";
+        return tasks.asObservableList().size() + " tasks, " + tags.asObservableList().size() +  " tags";
         // TODO: refine later
     }
 
     @Override
     public ObservableList<ReadOnlyTask> getTaskList() {
-        return new UnmodifiableObservableList<>(Tasks.asObservableList());
+        return new UnmodifiableObservableList<>(tasks.asObservableList());
     }
 
     @Override
@@ -175,13 +175,13 @@ public class ToDoList implements ReadOnlyToDoList {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof ToDoList // instanceof handles nulls
-                && this.Tasks.equals(((ToDoList) other).Tasks)
+                && this.tasks.equals(((ToDoList) other).tasks)
                 && this.tags.equalsOrderInsensitive(((ToDoList) other).tags));
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(Tasks, tags);
+        return Objects.hash(tasks, tags);
     }
 }
