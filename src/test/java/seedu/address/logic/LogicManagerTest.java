@@ -40,7 +40,6 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.ReadOnlyToDoList;
 import seedu.address.model.task.EndTime;
-import seedu.address.model.task.EndTime;
 import seedu.address.model.task.StartTime;
 import seedu.address.model.task.Title;
 import seedu.address.model.task.Task;
