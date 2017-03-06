@@ -10,8 +10,13 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class Venue {
 
     public static final String MESSAGE_VENUE_CONSTRAINTS =
+<<<<<<< HEAD
             "Task venues should only be 1 alphanumeric strings";
     public static final String VENUE_VALIDATION_REGEX = "[^\\s].*";
+=======
+    		"Person phone numbers should only contain numbers";
+    public static final String VENUE_VALIDATION_REGEX = "\\d+";
+>>>>>>> 23a468444a6352c09647dd2b7461d1249ff5a848
 
     public final String value;
 
