@@ -15,11 +15,9 @@ public class Title {
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-<<<<<<< HEAD
+
     public static final String TITLE_VALIDATION_REGEX = "[^\\s].*";
-=======
-    public static final String TITLE_VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
->>>>>>> 23a468444a6352c09647dd2b7461d1249ff5a848
+
 
     public final String title;
 

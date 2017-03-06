@@ -8,13 +8,10 @@ import seedu.address.commons.exceptions.IllegalValueException;
  */
 public class StartTime {
 
-<<<<<<< HEAD
+
     public static final String MESSAGE_STARTTIME_CONSTRAINTS = "Task starttime numbers should only contain numbers";
     public static final String STARTTIME_VALIDATION_REGEX = "[^\\s].*";
-=======
-    public static final String MESSAGE_STARTTIME_CONSTRAINTS = "Person emails should be 2 alphanumeric/period strings separated by '@'";
-    public static final String STARTTIME_VALIDATION_REGEX = "[\\w\\.]+@[\\w\\.]+";
->>>>>>> 23a468444a6352c09647dd2b7461d1249ff5a848
+
 
     public final String value;
 
