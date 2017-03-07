@@ -8,9 +8,9 @@ We are a team based in the [School of Computing, National University of Singapor
 <img src="images/ChenPengHao.png" width="150"><br>
 Role: Team Lead
 
-In Charge of: Model
-Responsibilities: Scheduling
-Features implemented:
+* In Charge of: Model
+* Responsibilities: Scheduling
+* Features implemented:
 
 -----
 
@@ -18,9 +18,9 @@ Features implemented:
 <img src="images/JiaYiLin.png" width="150"><br>
 Role: Developer <br>
 
-In Charge of: Commons
-Responsibilities: Testing
-Features implemented: 
+* In Charge of: Commons
+* Responsibilities: Testing
+* Features implemented: 
 
 -----
 
@@ -28,9 +28,9 @@ Features implemented:
 <img src="images/WangChi.png" width="150"><br>
 Role: Developer <br>
 
-In Charge of: Storage & Logic
-Responsibilities: Integration
-Features implemented:
+* In Charge of: Storage & Logic
+* Responsibilities: Integration
+* Features implemented:
 
 -----
 
@@ -38,8 +38,8 @@ Features implemented:
 <img src="images/YinaToh.png" width="150"><br>
 Role: Developer <br>
 
-In Charge of: Ui
-Responsibilities: Documentation
-Features implemented:
+* In Charge of: Ui
+* Responsibilities: Documentation
+* Features implemented:
 
 -----
