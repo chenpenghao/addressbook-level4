@@ -196,13 +196,15 @@ public class LogicManagerTest {
 
     @Test
     public void execute_add_invalidTaskData() {
-        assertCommandFailure("add []\\[;] p/12345 e/valid@e.mail a/valid, address",
+        assertCommandFailure("add []\\[;] v/valid s/1234 e/5678",
                 Title.MESSAGE_TITLE_CONSTRAINTS);
-        assertCommandFailure("add Valid Title p/not_numbers e/valid@e.mail a/valid, address",
+        assertCommandFailure("add Valid Title v/[]\\[;] s/1234 e/5678",
                 Venue.MESSAGE_VENUE_CONSTRAINTS);
-        assertCommandFailure("add Valid Title p/12345 e/notAnStartTime a/valid, address",
+        assertCommandFailure("add Valid Title v/valid s/notStartTime e/5678",
                 StartTime.MESSAGE_STARTTIME_CONSTRAINTS);
-        assertCommandFailure("add Valid Title p/12345 e/valid@e.mail a/valid, address t/invalid_-[.tag",
+        assertCommandFailure("add Valid Title v/valid s/1234 e/notEndTime",
+                EndTime.MESSAGE_ENDTIME_CONSTRAINTS);
+        assertCommandFailure("add Valid Title v/valid s/1234 e/5678 t/invalid_-[.tag",
                 Tag.MESSAGE_TAG_CONSTRAINTS);
 
     }
@@ -416,9 +418,9 @@ public class LogicManagerTest {
 
         Task adam() throws Exception {
             Title name = new Title("Adam Brown");
-            Venue privateVenue = new Venue("111111");
-            StartTime email = new StartTime("adam@gmail.com");
-            EndTime privateEndTime = new EndTime("111, alpha street");
+            Venue privateVenue = new Venue("validvenue");
+            StartTime email = new StartTime("1234");
+            EndTime privateEndTime = new EndTime("5678");
             Tag tag1 = new Tag("tag1");
             Tag tag2 = new Tag("longertag2");
             UniqueTagList tags = new UniqueTagList(tag1, tag2);
@@ -434,10 +436,12 @@ public class LogicManagerTest {
          */
         Task generateTask(int seed) throws Exception {
             return new Task(
-                    new Title("Task " + seed),
-                    new Venue("" + Math.abs(seed)),
-                    new StartTime(seed + "@email"),
-                    new EndTime("House of " + seed),
+                    new Title("Task" + seed),
+                    new Venue("House of "),
+                    //new Title("Task " + (""+seed)),
+                    //new Venue("House of " + (""+seed)),
+                    new StartTime("" + Math.abs(seed)),
+                    new EndTime("" + Math.abs(seed+1)),
                     new UniqueTagList(new Tag("tag" + Math.abs(seed)), new Tag("tag" + Math.abs(seed + 1)))
             );
         }
@@ -449,9 +453,9 @@ public class LogicManagerTest {
             cmd.append("add ");
 
             cmd.append(p.getTitle().toString());
-            cmd.append(" e/").append(p.getStartTime());
-            cmd.append(" p/").append(p.getVenue());
-            cmd.append(" a/").append(p.getEndTime());
+            cmd.append(" s/").append(p.getStartTime());
+            cmd.append(" v/").append(p.getVenue());
+            cmd.append(" e/").append(p.getEndTime());
 
             UniqueTagList tags = p.getTags();
             for (Tag t: tags) {
@@ -534,9 +538,9 @@ public class LogicManagerTest {
         Task generateTaskWithTitle(String name) throws Exception {
             return new Task(
                     new Title(name),
-                    new Venue("1"),
-                    new StartTime("1@email"),
-                    new EndTime("House of 1"),
+                    new Venue("abc"),
+                    new StartTime("1234"),
+                    new EndTime("5678"),
                     new UniqueTagList(new Tag("tag"))
             );
         }

@@ -16,7 +16,7 @@ public class Title {
      * otherwise " " (a blank string) becomes a valid input.
      */
 
-    public static final String TITLE_VALIDATION_REGEX = "[^\\s].*";
+    public static final String TITLE_VALIDATION_REGEX = "^[a-zA-Z0-9\\s]*$";
 
 
     public final String title;

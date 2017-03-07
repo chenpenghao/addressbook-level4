@@ -16,7 +16,7 @@ public class EndTime {
      * The first character of the end time must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String ENDTIME_VALIDATION_REGEX = "[^\\s].*";
+    public static final String ENDTIME_VALIDATION_REGEX = "[0-9]+";
 
     public final String value;
 
