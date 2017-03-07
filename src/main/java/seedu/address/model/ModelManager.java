@@ -12,6 +12,7 @@ import seedu.address.commons.util.CollectionUtil;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.model.task.Task;
 import seedu.address.model.task.ReadOnlyTask;
+import seedu.address.model.tag.Tag;
 import seedu.address.model.task.UniqueTaskList;
 import seedu.address.model.task.UniqueTaskList.TaskNotFoundException;
 
@@ -24,6 +25,8 @@ public class ModelManager extends ComponentManager implements Model {
 
     private final ToDoList ToDoList;
     private final FilteredList<ReadOnlyTask> filteredTasks;
+    private final FilteredList<Tag> filteredTags;
+    
 
     /**
      * Initializes a ModelManager with the given ToDoList and userPrefs.
@@ -36,6 +39,7 @@ public class ModelManager extends ComponentManager implements Model {
 
         this.ToDoList = new ToDoList(ToDoList);
         filteredTasks = new FilteredList<>(this.ToDoList.getTaskList());
+        filteredTags = new FilteredList<>(this.ToDoList.getTagList());
     }
 
     public ModelManager() {
@@ -91,6 +95,10 @@ public class ModelManager extends ComponentManager implements Model {
     @Override
     public void updateFilteredListToShowAll() {
         filteredTasks.setPredicate(null);
+    }
+    
+    public void updateFilteredTagListToShowAll() {
+        filteredTags.setPredicate(null);
     }
 
     @Override

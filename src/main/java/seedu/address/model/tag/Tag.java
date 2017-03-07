@@ -7,7 +7,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
  * Represents a Tag in the address book.
  * Guarantees: immutable; name is valid as declared in {@link #isValidTagName(String)}
  */
-public class Tag {
+public class Tag implements ReadOnlyTag{
 
     public static final String MESSAGE_TAG_CONSTRAINTS = "Tags names should be alphanumeric";
     public static final String TAG_VALIDATION_REGEX = "\\p{Alnum}+";
