@@ -11,7 +11,7 @@ public class Venue {
 
     public static final String MESSAGE_VENUE_CONSTRAINTS =
             "Task venues should only be 1 alphanumeric strings";
-    public static final String VENUE_VALIDATION_REGEX = "^[a-zA-Z0-9\\s]*$";
+    public static final String VENUE_VALIDATION_REGEX = "[^\\s].*";
 
 
     public final String value;

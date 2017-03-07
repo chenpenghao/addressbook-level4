@@ -10,7 +10,7 @@ public class StartTime {
 
 
     public static final String MESSAGE_STARTTIME_CONSTRAINTS = "Task start time numbers should only contain numbers";
-    public static final String STARTTIME_VALIDATION_REGEX = "[0-9]+";
+    public static final String STARTTIME_VALIDATION_REGEX = "[^\\s].*";
 
 
     public final String value;
