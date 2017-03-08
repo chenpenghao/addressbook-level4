@@ -390,8 +390,9 @@ Priority | As a ... | I want to ... | So that...
 
 {More to be added}
 ## Appendix B : Use Cases
-
+     	        	        	        	
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+
 
 #### Use case #1: add task
 
@@ -413,13 +414,14 @@ Use case ends
 > 1b1. To-do list shows an error message for invalid name input <br>
 > Use case ends
 
-1c. The input start time is before the end
-time
+1c. The input start time is before the end time
+
 
 >1c1. To-do list shows an error message for invalid input <br>
 > Use case ends
 
 1d. The input start time or end time is in an invalid format
+
 
 >1d1. To-do list shows an error message for invalid input <br>
 > Use case ends
@@ -451,6 +453,7 @@ time
 
 #### Use case #2: add tag
 
+
 **MSS**
 
 1. User requests to add a tag
@@ -460,6 +463,7 @@ Use case ends
 **Extensions**
 
 1a. The input tag name already exists
+
 
 > 1a1. To-do list prompts an error message that the tag name already exists <br>
 > Use case ends
@@ -474,7 +478,7 @@ Use case ends
 > Use case ends
 
 <br>
-
+
 #### Use case #3: customize commands
 
 **MSS**
@@ -501,6 +505,7 @@ Use case ends
 
 1. User requests to delete a task or tag
 2. To-do list delete the task and prompts message on UI to show success
+
 Use case ends
 
 **Extensions**
