@@ -1,14 +1,14 @@
 # To-do List - Developer Guide
 
-By : `Team SE-EDU`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `Jun 2016`  &nbsp;&nbsp;&nbsp;&nbsp; Licence: `MIT`
+By : `CS2103JAN2017-W10-B3`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `Feb 2017`  &nbsp;&nbsp;&nbsp;&nbsp; Licence: `NUS`
 
 ---
 
-1. [Setting Up](#setting-up)
-2. [Design](#design)
-3. [Implementation](#implementation)
-4. [Testing](#testing)
-5. [Dev Ops](#dev-ops)
+1. [Setting Up](#1-setting-up)
+2. [Design](#2-design)
+3. [Implementation](#3-implementation)
+4. [Testing](#4-testing)
+5. [Dev Ops](#5-dev-ops)
 
 * [Appendix A: User Stories](#appendix-a--user-stories)
 * [Appendix B: Use Cases](#appendix-b--use-cases)
@@ -348,9 +348,9 @@ Priority | As a ... | I want to ... | So that...
 -------- | :-------- | :--------- | :-----------
 `* * *` | new user | see usage instructions | I can refer to instructions when I forget how to use the App
 `* * *` | user | add a task by specifying a task description and the deadline | I can record tasks that need to be done by a specific day
-`* * *` | user |add an event/task with description, time period and date	| I can record events that need to be done in a specific period 
+`* * *` | user |add an event/task with description, time period and date | I can record events that need to be done in a specific period
 `* * *` | user |add an event/task with description that has variation of formats	| I am not limited to one and only one format - I can have some flexibility
-`* * *` | user |add a recurring task with description, time, frequency	|I can record tasks that need to be done on a specific day
+`* * *` | user |add a [recurring task](#recurring-task) with description, time, frequency	|I can record tasks that need to be done on a specific day
 `* * *` | user |add a tag/multiple tag to an existing event/task	| I do not have to always add the tag when I add the task
 `* * *` | user |delete unwanted tag	| I can remove the tags when I no longer need them
 `* * *` | user |delete task | I can remove the tasks when I have completed them
@@ -376,119 +376,123 @@ Priority | As a ... | I want to ... | So that...
 `* * *` | user |undo the most recent operation	| in case I made a mistake I can reverse
 `* * *` | user |exit the software | I can move to other windows when I finish using To-do list
 `* *` | user |group/filter tasks according to categories such as work/family/etc |	I will not be distracted by irrelevant tasks at specific times
-`* *` | user | edit the subtasks of a task	| I can update the subtasks if there is any changes
-`* *` | user |have suggestions when I typed invalidly |	I will know how to correct my mistakes
-`* *` | New user | have reminders of format when I started a command word	| I will know the correct format of the input
+`* *` | user | edit the subtasks of a task	| I can update the subtasks if there are any changes
+`* *` | user |have suggestions when I type invalidly |	I will know how to correct my mistakes
+`* *` | New user | have reminders of format when I start a command word	| I will know the correct format of the input
 `* *` | user | assign importance levels to each task with colour coding	| I can easily spot the more important tasks and prioritize them
 `* *` | user |set notifications before the due time for certain tasks |	I will be reminded of the task in a timely manner
 `* *` | user |split tasks into subtasks with a progress bar | I can keep track of my progress in individual tasks
 `* *` | user |copy and paste the task to some other day |	I don't need to type extra
 `* * ` | Advanced user | use shorter versions of a command/customize my commands	 | I can type a command faster
-`*` | user|have a guided tour of the software	| I will know what are the available features of the software
-`*` | user|customize the timing for reminder	| I will not be bombasted with too many reminders
+`*` | user|have a guided tour of the software	| I will know what the available features of the software are
+`*` | user|customize the timing for reminder	| I will not be bombarded with too many reminders
 `*` | user| share task/tasks with others |	I can designate my tasks to others
 
 {More to be added}
 ## Appendix B : Use Cases
      	        	        	        	
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
- 
+
+
 #### Use case #1: add task
- 
+
 **MSS**
- 
+
 1. User requests to add a task
 2. To-do list adds the new task and shows the details of the new task on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The new task created contains some optional parameters including description, start time, end time, tag, urgency level and so on.
- 
+
 >1a1. To-do list adds in the input parameters and shows the details on UI <br>
 > Use case ends
- 
+
 1b. The input task name contains invalid input
- 
+
 > 1b1. To-do list shows an error message for invalid name input <br>
 > Use case ends
- 
-1c. The input start time is before the end
-time
- 
+
+1c. The input start time is before the end time
+
+
 >1c1. To-do list shows an error message for invalid input <br>
 > Use case ends
 
 1d. The input start time or end time is in an invalid format
- 
+
+
 >1d1. To-do list shows an error message for invalid input <br>
 > Use case ends
- 
+
 1e. The input tag name does not exist and user would like to create a new tag
- 
+
 > 1e1. To-do list prompts a message to query if the user would like to create the tag
 > 1e2. User choose yes
 > 1e3. To-do list creates the new tag and shows information for the new task on UI <br>
 > Use case ends
- 
+
 1f. The input tag name does not exist and it is actually a typo error
- 
+
 > 1f1. To-do list prompts a message to query if the user would like to create the tag
 > 1f2. User choose no <br>
 > Use case resumes at Step 1
- 
+
 1g. The input urgency level is not valid e.g. the user input a float while an integer is expected
- 
+
 > 1d1. To-do list shows an error message for invalid input <br>
 > Use case ends
- 
+
 1h. There already exists a task with exact same value of all parameters
- 
+
 > 1h1. To-do list shows an error message for conflicts <br>
 > Use case ends
 
 <br>
 
 #### Use case #2: add tag
- 
+
+
 **MSS**
- 
+
 1. User requests to add a tag
 2. To-do list adds the new tag and shows the details of the new task on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The input tag name already exists
- 
+
+
 > 1a1. To-do list prompts an error message that the tag name already exists <br>
 > Use case ends
- 
+
 1b. The input new tag name does not have a proper format
- 
+
 > 1b1. To-do list prompts an error message for invalid input <br>
 > Use case ends
- 
+
 1c. User would like to add new task immediately to the task
 > 1c1. To-do list processes Update tags of a task (UC #5) <br>
 > Use case ends
- 
+
 <br>
-
+
 #### Use case #3: customize commands
- 
+
 **MSS**
- 
+
 1. User requests to customize some command with their customized shortcut
 2. To-do list updates the command input and show message on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The input command word already exists
 > 1a1. To-do list prompts an error message for invalid input <br>
 > Use case ends
- 
+
 1b. The input command word contains invalid input
 > 1b1. To-do list prompts an error message for invalid input <br>
 > Use case ends
@@ -496,21 +500,22 @@ Use case ends
 <br>
 
 #### Use case #4: Delete task or tag
- 
+
 **MSS**
- 
+
 1. User requests to delete a task or tag
-2. To-do list delete the task and prompts message on UI to show success  
+2. To-do list delete the task and prompts message on UI to show success
+
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The task/tag selected does not exist
 > 1a1. To-do list shows an error message for target not found <br>
 > Use case ends
- 
+
 1b. The user requests to delete all tasks under certain criteria, e.g. under the same tag or contains certain keywords
-> 1b1. To-do list lists out the tasks that fulfill the criteria (UC #) and prompts a confirmation message <br>
+> 1b1. To-do list lists out the tasks that fulfill the criteria (UC #8) and prompts a confirmation message <br>
 > 1b2. User confirms his actions <br>
 > 1b3. To-do list delete the selected tasks and prompts a message on UI to show success <br>
 > Use case ends
@@ -518,24 +523,24 @@ Use case ends
 <br>
 
 #### Use case #5: Update a task
- 
+
 **MSS**
- 
+
 1. User requests to update a task
 2. To-do list select the task and show the current information
 3. User select the parameters to be updated and input new value
 4. To-do list updates the value, and show updated information on UI
 Use case ends
- 
+
 **Extensions**
 3a. The task is not found
 > 1a1. To-do list prompts an error message for target not found <br>
 > Use case ends
- 
+
 3b. The input new values contain invalid input
 > 3b1. To-do list prompts an error message for invalid input <br>
 > Use case ends
- 
+
 3c. The use input a tag that does now exist
 > 3c1. To-do list prompts a message to query if the user needs to create a new list <br>
 > 3c2. User confirms yes or no <br>
@@ -545,13 +550,13 @@ Use case ends
 <br>
 
 #### Use case #6: Update a tag name
- 
+
 **MSS**
- 
+
 1. User requests to select a tag update its name
 2. To-do list update the name of the tag and show the updated information on UI
 Use case ends
- 
+
 **Extensions**
 1a. The selected tag does not exist
 > 1a1. To-do list shows error message on target not found. <br>
@@ -561,7 +566,7 @@ Use case ends
 
 > 1b1. To-do list shows error message on invalid input <br>
 > Use case ends
- 
+
 1c. The input new tag name already exist
 
 > 1c1. To-do list prompts message to query the user if he would like to merge two tags <br>
@@ -572,9 +577,9 @@ Use case ends
 <br>
 
 #### Use case #7: Merge two tags
- 
+
 **MSS**
- 
+
 1. User requests to select tag A to be merged to tag B
 2. To-do list merges the two tags by changing tags of all tasks under A to B
 Use case ends
@@ -592,97 +597,97 @@ Use case ends
 <br>
 
 #### Use case #8: List tasks
- 
+
 **MSS**
- 
+
 1. User requests to list tasks by certain parameters or criteria, for example by urgency levels, by end time, by tag, etc.
 2. To-do list shows all tasks that the user requests on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The given description is not following the format
- 
+
 > 1a1. To-do list shows an error message for invalid input <br>
 > Use case ends
- 
+
 1b. To-do list does not found any tasks
-> 1b1. To-do list returns ‘No task has been found.’ <br>
+> 1b1. To-do list returns 'No task has been found.' <br>
 > Use case ends <br>
 
 <br>
 
 #### Use case #9: List tags
- 
+
 **MSS**
- 
+
 1. User requests to list tags
 2. To-do list shows all tags on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The given description is not following the format
- 
+
 > 1a1. To-do list shows an error message for invalid input <br>
 > Use case ends
- 
+
 1b. To-do list does not found any tags
->1b1. To-do list returns ‘No tags has been found.’ <br>
+> 1b1. To-do list returns 'No tags has been found.' <br>
 > Use case ends
-
+
 <br>
 
 #### Use case #10: List reminders
- 
+
 **MSS**
- 
+
 1. User requests to list reminders
 2. To-do list shows all reminders on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. The given description is not following the format
- 
+
 >1a1. To-do list shows an error message for invalid input <br>
 > Use case ends
- 
+
 1b. To-do list does not found any tags
-> 1b1. To-do list returns ‘No reminder has been found.’ <br>
+> 1b1. To-do list returns 'No reminder has been found.' <br>
 > Use case ends
 
 <br>
 
-#### Use case #11: Select a task or a tag        	
- 
+#### Use case #11: Select a task or a tag
+
 **MSS**
- 
+
 1. User requests to select an object from a list of tasks by its given number <br>
 or to select consecutive objects from a list <br>
 or to select multiple objects form a list <br>
 or to select all objects form a list <br>
 2. To-do list selects and displays the task on UI.
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. User input is invalid
- 
+
 >1a1. To-do list shows an error message for invalid input. <br>
 > Use case ends
- 
+
 1b. User input number out of range.
- 
+
 > 1b1. To-do list shows an error message for invalid number. <br>
 > Use case ends <br>
 
 <br>
 
-#### Use case #12: Exit                  	
- 
+#### Use case #12: Exit
+
 **MSS**
- 
+
 1. User requests to exit To-do list
 2. To-do list exits.
 Use case ends
@@ -694,56 +699,56 @@ Use case ends
 
 <br>
 
-#### Use case #13: Storage             	
- 
+#### Use case #13: Storage
+
 **MSS**
- 
+
 1. User requests to change the path of the storage file to an existing file and export all data into that file <br>
 or change the path of the storage file to a new file and export all data into that file <br>
 or  clear all existing data <br>
 2. To-do list asks for confirmation.
 3. User inputs yes or no.
-4. To-do list do the commands accordingly and displays ‘operation done’ on UI
+4. To-do list do the commands accordingly and displays 'operation done' on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. User input is invalid
 > 1a1. To-do list shows an error message for invalid input. <br>
 > Use case ends
 
 <br>
 
-#### Use case #14: Set reminder      	
- 
+#### Use case #14: Set reminder
+
 **MSS**
- 
+
 1. User requests to set a reminder including its description, frequency and end time (for a specific task)
-2. To-do list set the reminder and displays ‘operation done’ on UI
+2. To-do list set the reminder and displays 'operation done' on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. User input is invalid
 > 1a1. To-do list shows an error message for invalid input. <br>
 > Use case ends
 
 <br>
 
-#### Use case #15: Tag                  	
- 
+#### Use case #15: Tag
+
 **MSS**
- 
+
 1. User requests to add a tag to the selected tasks
-2. To-do created the tag or added the tag and displays ‘operation done’ on UI
+2. To-do created the tag or added the tag and displays 'operation done' on UI
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. User input is invalid
- 
+
 > 1a1. To-do list shows an error message for invalid input. <br>
- 
+
 1b. The tag input does not exist
 > 1b1. To-do list create the new tag (UC#2) <br>
 > Use case ends
@@ -755,7 +760,7 @@ Use case ends
 **MSS**
 
 1. User requests help message
-2. To-do list prompts help message on the UI 
+2. To-do list prompts help message on the UI
 Use case ends
 
 **Extensions**
@@ -771,7 +776,7 @@ Use case ends
 **MSS**
 
 1. User requests to look for tasks or tags with a certain criteria
-2. To-do list provides a list of tasks or tags that fulfil the criteria (UC #8)
+2. To-do list provides a list of tasks or tags that fulfill the criteria (UC #8)
 3. User select one of the tasks or tags (UC #9)
 Use case ends
 
@@ -786,32 +791,32 @@ Use case ends
 
 <br>
 
-#### Use case #18: Undo an operation	
- 
+#### Use case #18: Undo an operation
+
 **MSS**
- 
+
 1. User requests to undo the last operations. Only a maximum of three consecutive undo requests is allowed.
-2. To-do list undoes the last operation and displays ‘operation done’ on UI.
- 
+2. To-do list undoes the last operation and displays 'operation done' on UI.
+
 Use case ends
- 
+
 **Extensions**
- 
+
 1a. To-do list finds no previous operation. There could be result from too many undo requests or first time using the software.
- 
->1a1. To-do list shows ‘no previous operation found’<br>
+
+>1a1. To-do list shows 'no previous operation found'<br>
 > Use case ends
- 
+
 1b. Last operation is invalid
- 
+
 >1b1. To-do list undoes last valid operation. <br>
 > Use case ends
- 
- 
+
 1c. Last operation cannot be undo (e.g. clear all data)
 >1c1. To-do list shows an error message for invalid operation <br>
 > Use case ends
 
+<br>
 
 ## Appendix C : Non Functional Requirements
 
@@ -819,8 +824,12 @@ Use case ends
 2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands)
    should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-{More to be added}
+4. Data should be recoverable in case of [unexpected program termination](#unexpected-program-termination) by simply retrieving the data stored in the target location.
+5. Program should be able to start up within 3s and respond to commands within 1s.
+6. Command format should be self-explanatory and easy to use so that new users can pick up within 5 minutes.
+7. Program should be able to handle up to 1000 tasks/events.
+8. Program should store data in [local environment](#local-environment ) and thus be able to work offline.
+9. Does not require any third party extensions nor should work as a third party extension of other applications.
 
 ## Appendix D : Glossary
 
@@ -828,23 +837,201 @@ Use case ends
 
 > Windows, Linux, Unix, OS-X
 
-##### Private contact detail
+##### Unexpected program termination
 
-> A contact detail that is not meant to be shared with others
+> Program stopped or forced to close by user via external mechanisms (ie Windows Task Manager)
+
+##### Local environment
+
+> User's computer hard disk or thumb drive, wherever the user specified to store the data or if not, where the program directory is located
+
+##### Recurring task
+
+> A task that occurs with a certain frequency (eg. every 2 hours/every Monday)
+
+##### Browser-based
+
+> Runs in a browser (eg. Chrome, IE, Firefox)
+
+##### Theme
+
+> Aesthetic design for user personalization, by changing the colour scheme/background picture/etc
+
+##### Calendar view
+
+> A calendar with tasks noted on their respective dates
+
+##### Synchronizes
+
+> Updates new edits on all directories that are linked together to ensure all directories have the most updated file versions
 
 ## Appendix E : Product Survey
 
-**Product Name**
+**Trello**
 
-Author: ...
+Author: Chen Penghao
 
-Pros:
+Main functionality
 
-* ...
-* ...
+* Stores and displays a list of task lists on the same interface.
 
-Cons:
+Features we might like to have:
 
-* ...
-* ...
+* Instant adding and displaying
+* Tagging and due dates
+* Display tasks of different type/tags on the same screen
+* (Might be useful): divide tasks into subtasks
+* Searching with keywords - one search produce result for both boards and tasks
+
+Features not important to Jim:
+
+* Share/private/team/public options
+* Display - no need to display everything at the same time. Just what Jim will like to know according to his own criteria
+
+Cons
+
+* No CLI
+* Difficult for new user to learn as the UI is not self explanatory and there is no help function.
+* No calendar/timeline view.
+* [Browser-based](#browser-based) so it requires internet connection.
+
+**Remember the milk**
+
+Author: Jia Yilin
+
+Main functionality
+
+* It allows users to have multiple task lists.
+
+Features we might like to have
+
+* Tagging
+* Can add levels of priority to tasks
+* Can add location to tasks
+* Can add estimated time for tasks
+* Display of total number of tasks , tasks overdue and tasks completed on the UI
+* Search by keywords
+* Trash for containing deleted tasks
+* Reminders
+
+Features not important to JIM
+
+* Share/give tasks to others
+* Contacts of others
+* Print task lists
+* Search for tasks that do not contain certain keywords
+* Integration with other softwares
+
+Cons
+
+* Based in a browser, so it requires internet.
+* Full features not available in the free version.
+* Controls are very much based on the GUI.
+* Cannot attach files to tasks
+* Cannot change the timing for reminders
+
+**Wunderlist**
+
+Author: Toh Yina
+
+Main functionality
+
+* It works as a list of tasks, so you create a list first before adding in the tasks to do
+    * E.g. List: CS2103, tasks -> read notes
+                -> do tutorial
+* Have folders to contain several lists to keep organized
+    * E.g. Folder: School, inside several lists of modules.
+
+Features that we might like to have
+
+* When clicked on complete, task auto hide
+* Can choose to view completed tasks
+* Allowed to rename folders / lists
+* Can delete list
+* Can restore deleted list
+* Priority marked by star -> only one level of priority
+* Can sort tasks by creation date / alphabetical order / priority
+
+Features that are not important for Jim
+
+* Can email list
+* Can print list
+* Have account and password
+* Can duplicate list
+* Can change [theme](#theme) of task manager
+
+Cons
+
+* No [calendar view](#calendar-view)
+* Does not have a start and end time for items
+* Not completely free.
+* Setup is inconvenient
+
+
+**HiTask**
+
+Author: Wang Chi
+
+Main functionality
+
+* Tasks-tracking with team collaboration
+
+Features we might like to have
+
+* Show a calendar on the side
+* User can choose a category for new tasks and upload files that are tagged to the specific task
+* Easily add short comments to existing tasks
+* Add subtasks
+* Move task to archive (instead of deleting the task)
+* UI: Provide tabs that contain lists of different tasks such as:
+    * 'Today' - tasks without deadlines or tasks due today
+    * 'Overdue' - tasks that are already overdue
+    * 'Project' - tasks that are large scale and with contain subtasks
+    * 'Calendar' - tasks displayed in a calendar format
+    * 'Activity' - a history or log of past actions
+* Tasks can be sorted according to priority.
+* Requires log-in with username and password so data is protected.
+
+Features not important to Jim
+
+* Showing the team members on the side
+* Create an online link to a task
+* Create copy of task
+* Input/import tasks from external sources, such as online
+* Assign project/task item to team members
+* Can see the tasks on team members' schedules
+* Everything can be controlled via the UI except inputting the names and labels
+
+Cons
+
+* Mostly an online organizer that stores everything online and operates online as well so an internet connection is needed to use it.
+* The above also means that the data can be lost with the server.
+* Category tabs are not customizable
+* All features are shown on the main frame even when not using them, cluttering up the UI.
+* Not completely free.
+
+
+**Todo.txt**
+
+Main functionality
+
+* Uses CLI to access a todo.txt file and use it to store tasks data. (similar to our product)
+
+Features we might like to have
+
+* Associate tasks with a/multiple project(s)
+* Tag the context with certain labels
+* List projects associated with project or keywords
+* Give a task a priority level
+* Each priority level task has its own colour code
+* [Synchronizes](#synchronizes) easily with file synchronizing software such as Dropbox
+
+Features not important to Jim
+
+* nil
+
+Cons
+
+* Too simple with few features
+* Purely CLI with no UI thus making it messy and difficult to read when dealing with large outputs
 
